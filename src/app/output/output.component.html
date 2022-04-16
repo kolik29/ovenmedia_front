@@ -1,0 +1,13 @@
+<div class="stream-header">
+    <label for="stream_id">id стрима:</label>
+    <input type="text" name="stream_id" [(ngModel)]="streamId">
+    <button (click)="streamConnect()">Подключиться</button>
+</div>
+<div class="stream-body">
+    <div [hidden]="cameraStreamHide">
+        <div id="cameraPlayer"></div>
+    </div>
+    <div [hidden]="screenStreamHide">
+        <div id="screenPlayer"></div>
+    </div>
+</div>

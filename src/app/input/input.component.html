@@ -1,0 +1,17 @@
+<div class="stream-link">
+    id стрима: {{streamId}}
+</div>
+<div class="main">
+    <div class="video">
+        <video id="camera" [muted]="'muted'"></video>
+    </div>
+    <div class="video">
+        <video id="screen" [muted]="'muted'"></video>
+    </div>
+    <div class="controls">
+        <button (click)="startCameraStream()">{{ cameraStreamEnabled ? 'Остановить' : 'Начать' }} трансляцию</button>
+        <button (click)="enableCameraAudio()">{{ audioCameraEnabled ? 'Отключить' : 'Включить' }} микрофон</button>
+        <button (click)="enableCameraVideo()">{{ videoCameraEnabled ? 'Отключить' : 'Включить' }} камеру</button>
+        <button (click)="startScreenStream()">{{ screenStreamEnabled ? 'Остановить' : 'Начать' }} демонстрацию экрана</button>
+    </div>
+</div>
