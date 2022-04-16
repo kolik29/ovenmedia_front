@@ -32,11 +32,13 @@ export class OutputComponent implements OnInit {
     this.cameraStream.ovenPlayer.on('stateChanged', (): void => {
       console.log(this.cameraStream.ovenPlayer.getState());
 
-      if (this.cameraStream.ovenPlayer.getState() == 'error')
+      if (this.cameraStream.ovenPlayer.getState() == 'error') {
         setTimeout(() => {
           this.initCameraStream();
-        }, 1500)
-      else
+        }, 1500);
+
+        this.cameraStreamHide = true;
+      } else
         this.cameraStreamHide = false;
     })
   }
@@ -48,11 +50,13 @@ export class OutputComponent implements OnInit {
     this.screenStream.ovenPlayer.on('stateChanged', (): void => {
       console.log(this.screenStream.ovenPlayer.getState());
 
-      if (this.screenStream.ovenPlayer.getState() == 'error')
+      if (this.screenStream.ovenPlayer.getState() == 'error') {
         setTimeout(() => {
           this.initScreenStream();
         }, 1500);
-      else
+        
+        this.screenStreamHide = true;
+      } else
         this.screenStreamHide = false;
     })
   }
